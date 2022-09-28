@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+// Get all the countries from the Asia continent /region using the Filter function
+        var request=new XMLHttpRequest();
+        request.open('GET','https://restcountries.com/v3.1/all','TRUE')
+        request.send();
+
+        request.onload=function(){
+            var country=JSON.parse(request.response)
+            // console.log(country)
+
+            // var asian= country.filter((element)=>element.region=="asia")
+            // console.log(asian)
+            console.log(country[100].region)
+
+            // // for in loop
+            // for(var key in country){
+            //     // console.log(county.name)
+            //     console.log(country[key].name)
+            // }
+            // // for of loop
+            // for(var index of country)
+            // {
+            //     console.log(index.name)
+            // }
+        }
+    </script>
+</body>
+</html>
