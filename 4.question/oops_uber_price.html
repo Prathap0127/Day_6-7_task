@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--write a class to calclute the price of uber -->
+    <!-- create 25% discount for the perosn what will be the amout , in new method -->
+
+    <script>
+
+        class Amount{
+            constructor(price,km,discount){
+                this.price=price;
+                this.km=km;
+                this.discount=discount;
+            }
+            getprice(){ //price 
+                var total=this.price*this.km;
+                return total
+            }
+            getdiscount(){
+                var total=this.price*this.km;
+                var offer=total*this.discount/100;
+                var netpay=total-offer;
+                return netpay
+            }
+            
+        }
+
+        var uber=new Amount(200,5);
+        console.log('Total Amount Rs.',uber.getprice());
+
+        var uber1=new Amount(200,5,25);
+        console.log('The Amount after discount Rs.',uber1.getdiscount());
+
+    </script>
+</body>
+</html>
