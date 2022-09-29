@@ -16,11 +16,11 @@
 
         request.onload=function(){
             var country=JSON.parse(request.response)
-            // console.log(country)
+            console.log(country)
 
-            // var asian= country.filter((element)=>element.region=="asia")
-            // console.log(asian)
-            console.log(country[100].region)
+            var asian= country.filter((element)=>element.region=="Asia")
+            console.log(asian);
+            // console.log(country[0].flag)
 
             // // for in loop
             // for(var key in country){

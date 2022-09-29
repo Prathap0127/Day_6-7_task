@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Print the total population of countries using reduce function -->
+    <script>
+        var request=new XMLHttpRequest();
+        request.open('GET','https://restcountries.com/v3.1/all','TRUE')
+        request.send();
+
+        request.onload=function(){
+            var country=JSON.parse(request.response)
+            // console.log(country)
+            var tPopulation=country.reduce((acc,element)=>acc+element.population,0)
+            console.log('The total Population of all the Country',tPopulation)
+
+        }
+
+
+    </script>
+</body>
+</html>
