@@ -1,34 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <!-- Print the country which uses US Dollars as currency. -->
     <script>
-        var request=new XMLHttpRequest();
-        request.open('GET','https://restcountries.com/v3.1/all','TRUE');
+        var request = new XMLHttpRequest();
+        request.open('GET', 'https://restcountries.com/v3.1/all', 'TRUE');
         request.send();
 
-        request.onload=function(){
-            var country=JSON.parse(request.response);
-            console.log(country);
-
-            var cusd=country.filter((element)=>{
-                if(element.currienc=="Oceania"){
-                    
-                    // if(element.region="Americas"){
-                    // console.log(element.currencies)
-                // }
+        request.onload = function () {
+            var country = JSON.parse(request.response);
+            // console.log(country);
+            country.filter(element => {
+                //console.log(element)
+                for (let key in element.currencies) {
+                    //console.log(key)
+                    if (element.currencies[key].code === "USD") {
+                        console.log(element.name)
+                    }
                 }
-            });
-            
-            
+            })
+
+
         }
 
     </script>
 </body>
+
 </html>
